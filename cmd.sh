@@ -4,16 +4,13 @@ set -x
 
 /home/gmap/mrpm/marguina/pack/48t1_copy_model.01.PGI217.cpu0/mpif90 \
   -c -fPIC -Minfo -gopt -Mlarge_arrays -Mlist -traceback -Mnofma -Mbyteswapio -Mbackslash \
-  -DBULL -DLINUX -DLITTLE_ENDIAN -DLITTLE -DADDRESS64 -DGRIB_API_1 -O0 -g -acc=gpu -ta=tesla:lineinfo \
-  -Mcuda -DINTEL_BUG_LAIDDIOBSAD -DINTEL_BUG_MPOBSEQ \
-  type_toto.F90
+  -O0 -g -acc=gpu -ta=tesla:lineinfo -Mcuda type_toto.F90
 
 ar crv 'lib[3].a' type_toto.o
 
 /home/gmap/mrpm/marguina/install/gmkpack_support/wrapper/PGI217/mpif90  \
   -c -fPIC -Minfo -gopt -Mlarge_arrays -Mlist -traceback -Mnofma -Mbyteswapio -Mbackslash   \
-  -DBULL -DLINUX -DLITTLE_ENDIAN -DLITTLE -DADDRESS64 -DGRIB_API_1 -O0 -g -acc=gpu -ta=tesla:lineinfo -Mcuda  \
-  -DINTEL_BUG_LAIDDIOBSAD -DINTEL_BUG_MPOBSEQ  test_load_model.F90
+  -O0 -g -acc=gpu -ta=tesla:lineinfo -Mcuda  test_load_model.F90
 
 
 export LD_LIBRARY_PATH=/opt/softs/nvidia/hpc_sdk/Linux_x86_64/21.7/comm_libs/nvshmem/lib:/opt/softs/nvidia/hpc_sdk/Linux_x86_64/21.7/comm_libs/nccl/lib:/opt/softs/nvidia/hpc_sdk/Linux_x86_64/21.7/comm_libs/mpi/lib:/opt/softs/nvidia/hpc_sdk/Linux_x86_64/21.7/math_libs/lib64:/opt/softs/nvidia/hpc_sdk/Linux_x86_64/21.7/compilers/lib:/opt/softs/nvidia/hpc_sdk/Linux_x86_64/21.7/cuda/lib64
