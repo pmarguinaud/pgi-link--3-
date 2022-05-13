@@ -5,6 +5,8 @@ module load nvhpc/21.7
 
 set -x
 
+\rm *.x *.o *.mod *.a
+
 pgf90 -c -Mlarge_arrays -Mlist -traceback -Mnofma -Mbyteswapio -Mbackslash -O0 -g -acc=gpu -ta=tesla -Mcuda type_toto.F90
 pgf90 -c -Mlarge_arrays -Mlist -traceback -Mnofma -Mbyteswapio -Mbackslash -O0 -g -acc=gpu -ta=tesla -Mcuda  test_load_model.F90
 
