@@ -12,5 +12,5 @@ LIB="[3]"
 
 ar crv "lib$LIB.a" type_toto.o
 
-pgf90 -o toto1.x -acc=gpu -ta=tesla -Mcuda -traceback -Mbyteswapio                   test_load_model.o type_toto.o 
-pgf90 -o toto2.x -acc=gpu -ta=tesla -Mcuda -traceback -Mbyteswapio -Wl,--start-group test_load_model.o -L. -l$LIB -Wl,--end-group 
+pgf90 -o toto1.x -acc=gpu -ta=tesla -Mcuda -traceback -Mbyteswapio test_load_model.o type_toto.o 
+pgf90 -o toto2.x -acc=gpu -ta=tesla -Mcuda -traceback -Mbyteswapio test_load_model.o -L. -l$LIB 
