@@ -2,3 +2,13 @@
 *.o
 a.out
 *.lst
+.stderr
+.stdout
+_odb_glue.c
+entry_list
+now
+table.comm
+table.current
+table.next
+*.mod
+
