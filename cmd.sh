@@ -1,7 +1,8 @@
 #!/bin/bash
 
 
-module load nvhpc/21.7
+#odule load nvhpc/21.7
+module load nvhpc/22.1
 
 set -x
 
