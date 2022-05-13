@@ -27,7 +27,7 @@ export PATH=/opt/softs/nvidia/hpc_sdk/Linux_x86_64/21.7/compilers/bin:/opt/softs
   -Wl,-rpath,/opt/nvidia/hpc_sdk/Linux_x86_64/20.9/cuda/lib64 \
   -Wl,-rpath,/home/gmap/mrpm/marguina/install/PGI217/hdf5-1.10.5/lib \
   -Wl,-rpath,/home/gmap/mrpm/marguina/install/PGI217/netcdf-4.7.2/lib \
-  -Wl,--start-group ./_odb_glue.o ./test_load_model.o \
+  -Wl,--start-group ./test_load_model.o \
   -L. -l[1] -l[2] -l[3] -l[4] -l[5] -l[6] -l[7] -l[8] -l[9] -l[10] -l[11] -l[12] -l[13] -l[14] -l[15] -l[16] \
   -l[17] -l[18] -l[19] -l[20] -l[21] -l[22] -l[23] -l[24] -l[25] -l[26] -l[27] -l[28] -l[29] -l[30] -l[31] -l[32] \
   -l[33] -l[34] -l[35] -l[36] -l[37] -l[38] -l[39] -l[40] -l[41] -l[42] -l[43] -l[44] -l[45] -l[46] \
