@@ -18,18 +18,13 @@ export PATH=/opt/softs/nvidia/hpc_sdk/Linux_x86_64/21.7/compilers/bin:/opt/softs
 
 /opt/softs/nvidia/hpc_sdk/Linux_x86_64/21.7/comm_libs/mpi/bin/mpif90 \
   -acc=gpu -ta=tesla:lineinfo \
-  -Mcuda -traceback -Mbyteswapio -Wl,-rpath,/home/gmap/mrpm/marguina/install/PGI217/eccodes-2.14.0/lib \
-  -Wl,-rpath,/home/gmap/mrpm/marguina/install/PGI217/lapack-3.2.1/lib \
+  -Mcuda -traceback -Mbyteswapio \
   -Wl,-rpath,/opt/nvidia/hpc_sdk/Linux_x86_64/20.9/comm_libs/nvshmem/lib \
   -Wl,-rpath,/opt/nvidia/hpc_sdk/Linux_x86_64/20.9/comm_libs/nccl/lib \
   -Wl,-rpath,/opt/nvidia/hpc_sdk/Linux_x86_64/20.9/comm_libs/mpi/lib \
   -Wl,-rpath,/opt/nvidia/hpc_sdk/Linux_x86_64/20.9/math_libs/lib64 \
   -Wl,-rpath,/opt/nvidia/hpc_sdk/Linux_x86_64/20.9/compilers/lib \
   -Wl,-rpath,/opt/nvidia/hpc_sdk/Linux_x86_64/20.9/cuda/lib64 \
-  -Wl,-rpath,/home/gmap/mrpm/marguina/install/PGI217/hdf5-1.10.5/lib \
-  -Wl,-rpath,/home/gmap/mrpm/marguina/install/PGI217/netcdf-4.7.2/lib \
-  -Wl,--start-group ./test_load_model.o \
-  -L. -l[3] \
-  -Wl,--end-group \
+  -Wl,--start-group ./test_load_model.o -L. -l[3] -Wl,--end-group \
   -L/opt/softs/nvidia/hpc_sdk/Linux_x86_64/21.7/compilers/lib -lnvhpcatm \
   -Wl,-rpath,/opt/softs/nvidia/hpc_sdk/Linux_x86_64/21.7/compilers/lib
