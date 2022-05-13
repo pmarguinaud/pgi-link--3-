@@ -19,6 +19,4 @@ export PATH=/opt/softs/nvidia/hpc_sdk/Linux_x86_64/21.7/compilers/bin:/opt/softs
 /opt/softs/nvidia/hpc_sdk/Linux_x86_64/21.7/comm_libs/mpi/bin/mpif90 \
   -acc=gpu -ta=tesla:lineinfo \
   -Mcuda -traceback -Mbyteswapio \
-  -Wl,--start-group ./test_load_model.o -L. -l[3] -Wl,--end-group \
-  -L/opt/softs/nvidia/hpc_sdk/Linux_x86_64/21.7/compilers/lib -lnvhpcatm \
-  -Wl,-rpath,/opt/softs/nvidia/hpc_sdk/Linux_x86_64/21.7/compilers/lib
+  -Wl,--start-group ./test_load_model.o -L. -l[3] -Wl,--end-group 
