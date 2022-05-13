@@ -5,15 +5,11 @@ module load nvhpc/21.7
 
 set -x
 
-pgf90 \
-  -c -fPIC -Minfo -gopt -Mlarge_arrays -Mlist -traceback -Mnofma -Mbyteswapio -Mbackslash \
-  -O0 -g -acc=gpu -ta=tesla:lineinfo -Mcuda type_toto.F90
+pgf90 -c -fPIC -Minfo -Mlarge_arrays -Mlist -traceback -Mnofma -Mbyteswapio -Mbackslash -O0 -g -acc=gpu -ta=tesla:lineinfo -Mcuda type_toto.F90
+pgf90 -c -fPIC -Minfo -Mlarge_arrays -Mlist -traceback -Mnofma -Mbyteswapio -Mbackslash -O0 -g -acc=gpu -ta=tesla:lineinfo -Mcuda  test_load_model.F90
 
 ar crv 'lib[3].a' type_toto.o
 
-pgf90  \
-  -c -fPIC -Minfo -gopt -Mlarge_arrays -Mlist -traceback -Mnofma -Mbyteswapio -Mbackslash   \
-  -O0 -g -acc=gpu -ta=tesla:lineinfo -Mcuda  test_load_model.F90
 
 
 pgf90 \
