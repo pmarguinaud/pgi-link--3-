@@ -2,5 +2,5 @@
 
 set -x
 
-./toto1.x
-./toto2.x
+./toto_3_.x
+./toto[3].x
